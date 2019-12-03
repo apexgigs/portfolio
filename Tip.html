@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tip Calculator</title>
+    <script src="tip.js" charset="utf-8"></script>
+    <style media="screen">
+
+
+      .tip{
+        margin:auto;
+        text-align: center;
+        background-color:green;
+        height: 400px;
+        width: 250px;
+        padding-left:100px;
+        padding-right:100px;
+
+
+      }
+      h1{
+        text-align:center;
+      }
+      body{
+        background-image: url(cash.jpg); 
+      }
+    </style>
+  </head>
+  <body>
+    <div id=box>
+    <div class="tip">
+      <h1>Tip Calculator</h1>
+
+       <br>
+       <br>
+
+        <br>
+        <br>
+        <form>
+           Bill Ammount: <input type="text" id="billAmmount">
+           <br>
+           <br>
+             Number of Guests: <br>
+             <input type="number" id=numOfGuest min="1" max="12">
+
+            <p>Select Tip Ammount?
+              <p>
+                <select id="tipAmm">
+              <option disabled selected value="0">-- Choose an Option --</option>
+              <option value="0.30">30&#37; </option>
+              <option value="0.20">20&#37;</option>
+              <option value="0.15">15&#37;</option>
+              <option value="0.1">10&#37;</option>
+              <option value="0.05">5&#37;</option>
+          </select>
+
+       <br>
+       <br>
+
+      <p id="billPerPerson"> <button type="button" onclick="total()"> Total Tip </button> </p>
+      <p id="youPay"> Tip Per Person   </p>
+  </div>
+  </div>
+
+  </body>
+</html>

@@ -1,0 +1,411 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Crown Jewel Studio Gallary</title>
+
+  <style media="screen">
+
+  /*Start of the image gallary*/
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Raleway;
+      background-color: white;
+    }
+
+    .heading {
+        text-align: center;
+        font-size: 2.0em;
+        letter-spacing: 1px;
+        padding: 40px;
+        color: Black;
+    }
+
+    .gallery-image {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .gallery-image img {
+      height: 250px;
+      width: 350px;
+      transform: scale(1.0);
+      transition: transform 0.4s ease;
+    }
+
+    .img-box {
+      box-sizing: content-box;
+      margin: 10px;
+      height: 250px;
+      width: 350px;
+      overflow: hidden;
+      display: inline-block;
+      color: white;
+      position: relative;
+      background-color: white;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 5px;
+      left: 20px;
+      opacity: 0.0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .transparent-box {
+      height: 250px;
+      width: 350px;
+      background-color:rgba(0, 0, 0, 0);
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .img-box:hover img {
+      transform: scale(1.5);
+    }
+
+    .img-box:hover .transparent-box {
+      background-color:rgba(0, 0, 0, 0.5);
+    }
+
+    .img-box:hover .caption {
+      transform: translateY(-20px);
+      opacity: 1.0;
+    }
+
+    .img-box:hover {
+      cursor: pointer;
+    }
+
+    .caption > p:nth-child(2) {
+      font-size: 0.8em;
+    }
+
+    .opacity-low {
+      opacity: 0.5;
+
+/* Image Gallary Styling;
+experiacing technical difficulies with external stylesheet. will correct soon*/
+
+    }
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0, 0.9);
+      overflow-x: hidden;
+      transition: 0.5s;
+    }
+
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .overlay a {font-size: 20px}
+      .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+      }
+    }
+
+.container {
+  position: relative;
+  display: none;
+}
+
+/* button in picture styling*/
+#pic{
+  font-size: 18px;
+  border-radius: 3px;
+  border-color: none;
+
+
+
+
+}
+#pic:hover{
+  background-color: blue;
+}
+
+  </style>
+</head>
+<body style="margin-top: 50px ; margin-left: 40px; margin-bottom: 50px ; margin-right:50px;">
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="home.html">Home</a>
+      <a href="crownjewel.html">Photogrophy</a>
+      <a href="contact">Contact</a>
+    </div>
+  </div>
+  <span style=" color:red; font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Menu </span>
+
+
+
+<!-- Start of Gallary-->
+  <p class="heading">Crown Jewel Studios</p>
+
+<div class="gallery-image">
+
+
+    <div class="img-box" onclick="myFunction()"/>
+      <img src="photos/pic1.jpg" id="profilepicture" alt=""  style="width:100%;">
+      <div class="transparent-box">
+        <div class="caption">
+          <a href="photos/pic1.jpg"><button type="button" id="pic" onclick="myFunction()"> enlarge</button></a>
+          <p class="opacity-low">Parade</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="img-box">
+      <img src="photos/pic2.jpg" alt=""  />
+      <div class="transparent-box">
+        <div class="caption">
+          <a href="photos/pic2.jpg"><button type="button" id="pic" onclick="myFunction()"> enlarge </button></a>
+          <p class="opacity-low">Parade 2</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="img-box">
+      <img src="photos/pic3.jpg" alt="" onclick="myFunction()"/>
+      <div class="transparent-box">
+        <div class="caption">
+          <a href="photos/pic3.jpg"><button type="button" id="pic" onclick="myFunction()">enlarge </button></a>
+          <p class="opacity-low">Doom</p>
+        </div>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="photos/pic4.jpg" alt="" onclick="myFunction()"/>
+      <div class="transparent-box">
+        <div class="caption">
+          <a href="photos/pic4.jpg"><button type="button" id="pic" onclick="myFunction()"> enlarge </button></a>
+          <p class="opacity-low">Dead shirt</p>
+        </div>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="photos/pic5.jpg" alt=""onclick="myFunction()" />
+      <div class="transparent-box">
+        <div class="caption">
+          <a href="photos/pic5.jpg"><button type="button" id="pic" onclick="myFunction()"> enlarge </button></a>
+          <p class="opacity-low">Vintage</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-box">
+      <img src="photos/pic6.jpg" alt="" onclick="myFunction()"/>
+      <div class="transparent-box">
+        <div class="caption">
+          <a href="photos/pic6.jpg"><button type="button" id="pic" onclick="myFunction()"> enlarge </button></a>
+          <p class="opacity-low">Vintage 2</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-box">
+      <img src="photos/pic7.jpg" alt="" onclick="myFunction()"/>
+      <div class="transparent-box">
+        <div class="caption">
+          <a href="photos/pic7.jpg"><button type="button" id="pic" onclick="myFunction()"> enlarge </button></a>
+          <p class="opacity-low"> Bodega</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="img-box">
+      <img src="photos/pic8.jpg" alt="" onclick="myFunction()"/>
+      <div class="transparent-box">
+        <div class="caption">
+          <a href="photos/pic8.jpg"><button type="button" id="pic" onclick="myFunction()"> enlarge </button></a>
+          <p class="opacity-low">Memorial</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-box">
+      <img src="photos/pic9.jpg" alt="" onclick="myFunction()"/>
+      <div class="transparent-box">
+        <div class="caption">
+          <a href="photos/pic9.jpg"><button type="button" id="pic" onclick="myFunction()"> enlarge</button></a>
+          <p class="opacity-low">Portrait</p>
+        </div>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="photos/ameila.jpg" alt="" onclick="myFunction()"/>
+      <div class="transparent-box">
+        <div class="caption">
+          <a href="photos/ameila.jpg"><button type="button" id="pic" onclick="myFunction()"> enlarge</button></a>
+          <p class="opacity-low">Portrait</p>
+        </div>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="photos/throwback.jpg" alt="" onclick="myFunction()"/>
+      <div class="transparent-box">
+        <div class="caption">
+          <a href="photos/throwback.jpg"><button type="button" id="pic" onclick="myFunction()"> enlarge</button></a>
+          <p class="opacity-low">MLK</p>
+        </div>
+      </div>
+    </div>
+<br>
+<br>
+<br>
+
+<br>
+  <!-- The expanding image container -->
+
+<br>
+<br>
+<br>
+
+
+<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+<div style="isolation: default; margin-top: 50px ; margin-left: 40px; margin-bottom: 50px ; margin-right:50px; padding-top:50px;">
+  <div id="player"> </div>
+
+  <script>
+    // 2. This code loads the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '900',
+        width: '1100',
+        videoId: '5j2rnR4yKWc',
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+      event.target.playVideo();
+    }
+
+    // 5. The API calls this function when the player's state changes.
+    //    The function indicates that when playing a video (state=1),
+    //    the player should play for six seconds and then stop.
+    var done = false;
+    function onPlayerStateChange(event) {
+      if (event.data == YT.PlayerState.PLAYING && !done) {
+        setTimeout(stopVideo, 6000);
+        done = true;
+      }
+    }
+    function stopVideo() {
+      player.stopVideo();
+    }
+  </script>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+  function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  }
+  </script>
+
+  <script type="text/javascript">
+
+  function myFunction(){
+var picturePicture= document.getElementById('profilepicture')
+
+document.getElementById('showImg').innerHTML=('<img src="profilepic.jpg"/>')
+  }
+</script>
+</body>
+</html>
